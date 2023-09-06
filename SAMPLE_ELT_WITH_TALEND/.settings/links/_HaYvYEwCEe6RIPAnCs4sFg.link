@@ -1,0 +1,29 @@
+{
+  "itemId" : "_HaYvYEwCEe6RIPAnCs4sFg",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_RfgocEwGEe6RIPAnCs4sFg",
+    "parameterList" : [ {
+      "id" : "_RgBl0EwGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_Login"
+    }, {
+      "id" : "_RgBl0UwGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_Server"
+    }, {
+      "id" : "_RgBl0kwGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_Schema"
+    }, {
+      "id" : "_RgBl00wGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_Database"
+    }, {
+      "id" : "_RgBl1EwGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_Port"
+    }, {
+      "id" : "_RgCM4EwGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_AdditionalParams"
+    }, {
+      "id" : "_RgCM4UwGEe6RIPAnCs4sFg",
+      "name" : "RDS_Posgres_Password"
+    } ]
+  } ]
+}

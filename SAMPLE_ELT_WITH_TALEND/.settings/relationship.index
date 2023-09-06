@@ -1,1 +1,16 @@
-[ ]
+[ {
+  "baseItem" : {
+    "id" : "_H7UlMEsxEe63NMRT8_C-MA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "_RfgocEwGEe6RIPAnCs4sFg",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
+    "id" : "_3b1F4EyOEe6tR-ZuqzQJgg - staging_event_schema",
+    "version" : "Latest",
+    "type" : "schema"
+  } ]
+} ]

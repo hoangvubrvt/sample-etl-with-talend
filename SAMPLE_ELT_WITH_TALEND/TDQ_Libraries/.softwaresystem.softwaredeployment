@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<softwaredeployment:TdSoftwareSystem xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:softwaredeployment="http://www.talend.org/cwm/foundation/softwaredeployment/2010" xmi:id="_Tr2kMEwGEe6RIPAnCs4sFg" name="PostgreSQL" subtype="PostgreSQL" version="15.4 (Debian 15.4-1.pgdg120+1)"/>
