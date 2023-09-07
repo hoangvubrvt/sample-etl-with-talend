@@ -1,0 +1,29 @@
+{
+  "itemId" : "_38kCQE18Ee6KMMxOAM8cHg",
+  "contextList" : [ {
+    "contextName" : "Default",
+    "repoId" : "_NE1nEE1-Ee6yHO9Fmdr8fw",
+    "parameterList" : [ {
+      "id" : "_NFMMYU1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Password"
+    }, {
+      "id" : "_NFMMYk1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Port"
+    }, {
+      "id" : "_NFMMY01-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_AdditionalParams"
+    }, {
+      "id" : "_NFMMZE1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Login"
+    }, {
+      "id" : "_NFMMZU1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Schema"
+    }, {
+      "id" : "_NFMMZk1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Server"
+    }, {
+      "id" : "_NFMMZ01-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Database"
+    } ]
+  } ]
+}

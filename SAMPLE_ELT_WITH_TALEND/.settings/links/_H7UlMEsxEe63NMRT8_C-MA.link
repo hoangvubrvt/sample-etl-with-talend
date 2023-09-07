@@ -35,5 +35,30 @@
       "id" : "_JrxEYU18Ee6KMMxOAM8cHg",
       "name" : "connection_secret_key"
     } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_NE1nEE1-Ee6yHO9Fmdr8fw",
+    "parameterList" : [ {
+      "id" : "_NFMMYk1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Port"
+    }, {
+      "id" : "_NFMMZk1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Server"
+    }, {
+      "id" : "_NFMMZU1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Schema"
+    }, {
+      "id" : "_NFMMZE1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Login"
+    }, {
+      "id" : "_NFMMY01-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_AdditionalParams"
+    }, {
+      "id" : "_NFMMZ01-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Database"
+    }, {
+      "id" : "_NFMMYU1-Ee6yHO9Fmdr8fw",
+      "name" : "AWS_Redshift_Password"
+    } ]
   } ]
 }
