@@ -17,6 +17,10 @@
     "version" : "Latest",
     "type" : "context"
   }, {
+    "id" : "_te-sQE2AEe6yHO9Fmdr8fw",
+    "version" : "Latest",
+    "type" : "context"
+  }, {
     "id" : "_38kCQE18Ee6KMMxOAM8cHg",
     "version" : "Latest",
     "type" : "property"
@@ -30,6 +34,14 @@
     "type" : "schema"
   }, {
     "id" : "_b2Nh0EybEe6Jvvu5xahXlA - staging_songs",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_hknfAEyvEe6ZsdZOVUsn9Q - metadata",
+    "version" : "Latest",
+    "type" : "schema"
+  }, {
+    "id" : "_kDOPcEyvEe6ZsdZOVUsn9Q - metadata",
     "version" : "Latest",
     "type" : "schema"
   } ]

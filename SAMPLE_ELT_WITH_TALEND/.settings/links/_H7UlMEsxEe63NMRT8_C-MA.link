@@ -60,5 +60,18 @@
       "id" : "_NFMMYU1-Ee6yHO9Fmdr8fw",
       "name" : "AWS_Redshift_Password"
     } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_te-sQE2AEe6yHO9Fmdr8fw",
+    "parameterList" : [ {
+      "id" : "_tgWlQE2AEe6yHO9Fmdr8fw",
+      "name" : "aws_s3_bucket"
+    }, {
+      "id" : "_tgWlQU2AEe6yHO9Fmdr8fw",
+      "name" : "aws_s3_prefix_log_data"
+    }, {
+      "id" : "_tgWlQk2AEe6yHO9Fmdr8fw",
+      "name" : "aws_s3_prefix_song_data"
+    } ]
   } ]
 }

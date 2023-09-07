@@ -16,6 +16,9 @@
     <contextParameter comment="" internalId="_au2gBE1-Ee6yHO9Fmdr8fw" name="AWS_Redshift_AdditionalParams" prompt="AWS_Redshift_AdditionalParams?" promptNeeded="false" repositoryContextId="_NE1nEE1-Ee6yHO9Fmdr8fw" type="id_String" value=""/>
     <contextParameter comment="" internalId="_au2gBU1-Ee6yHO9Fmdr8fw" name="AWS_Redshift_Database" prompt="AWS_Redshift_Database?" promptNeeded="false" repositoryContextId="_NE1nEE1-Ee6yHO9Fmdr8fw" type="id_String" value="dev"/>
     <contextParameter comment="" internalId="_au2gBk1-Ee6yHO9Fmdr8fw" name="AWS_Redshift_Password" prompt="AWS_Redshift_Password?" promptNeeded="false" repositoryContextId="_NE1nEE1-Ee6yHO9Fmdr8fw" type="id_Password" value="enc:system.encryption.key.v1:GZUqwwhF1MFm3jWGDQfyVNXb2xpyGQ190XTmeDRU4rh1ueeWRQ=="/>
+    <contextParameter comment="" internalId="_t6otgE2AEe6yHO9Fmdr8fw" name="aws_s3_bucket" prompt="aws_s3_bucket?" promptNeeded="false" repositoryContextId="_te-sQE2AEe6yHO9Fmdr8fw" type="id_String" value="etl-with-talend"/>
+    <contextParameter comment="" internalId="_t6otgU2AEe6yHO9Fmdr8fw" name="aws_s3_prefix_log_data" prompt="aws_s3_prefix_log_data?" promptNeeded="false" repositoryContextId="_te-sQE2AEe6yHO9Fmdr8fw" type="id_String" value="log-data"/>
+    <contextParameter comment="" internalId="_t6otgk2AEe6yHO9Fmdr8fw" name="aws_s3_prefix_song_data" prompt="aws_s3_prefix_song_data?" promptNeeded="false" repositoryContextId="_te-sQE2AEe6yHO9Fmdr8fw" type="id_String" value="song-data"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -130,7 +133,7 @@
     <routinesParameter id="_VljWAEswEe63NMRT8_C-MA" name="DataQualityDependencies"/>
     <routinesParameter id="_VlnAYEswEe63NMRT8_C-MA" name="DataMasking"/>
   </parameters>
-  <node componentName="tS3List" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="64">
+  <node componentName="tS3List" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3List_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tS3Connection_1"/>
@@ -168,7 +171,7 @@
     <elementParameter field="TEXT" name="LABEL" value="list-all-file-in-log-data"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tS3Get" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="864" posY="64">
+  <node componentName="tS3Get" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3Get_1"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tS3Connection_1"/>
@@ -232,7 +235,7 @@
     <elementParameter field="TEXT" name="LABEL" value="save_all_log_data_file_to_local_storage"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tS3Connection" componentVersion="0.102" offsetLabelX="-22" offsetLabelY="37" posX="320" posY="64">
+  <node componentName="tS3Connection" componentVersion="0.102" offsetLabelX="-22" offsetLabelY="37" posX="448" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3Connection_1"/>
     <elementParameter field="CLOSED_LIST" name="CREDENTIAL_PROVIDER" value="STATIC_CREDENTIALS"/>
     <elementParameter field="FILE" name="PROFILE_PATH" show="false" value="&quot;&quot;"/>
@@ -277,11 +280,11 @@
     <elementParameter field="TEXT" name="LABEL" value="conect_to_S3_bucket"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="64">
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="640">
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_1"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;/Users/vuh1/Development/sparkify-data/log-data&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
@@ -304,7 +307,7 @@
     <elementParameter field="TEXT" name="LABEL" value="log-data-file-list"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="640">
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_1"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_3b1F4EyOEe6tR-ZuqzQJgg - staging_event_schema"/>
@@ -461,7 +464,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="640">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="704">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_HaYvYEwCEe6RIPAnCs4sFg"/>
@@ -637,7 +640,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tS3List" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="672" posY="192">
+  <node componentName="tS3List" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3List_2"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tS3Connection_1"/>
@@ -675,7 +678,7 @@
     <elementParameter field="TEXT" name="LABEL" value="list-all-file-in-song-data"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tS3Get" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="192">
+  <node componentName="tS3Get" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1248" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3Get_2"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tS3Connection_1"/>
@@ -739,7 +742,7 @@
     <elementParameter field="TEXT" name="LABEL" value="save_all_song_data_file_to_local_storage"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tParallelize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="64">
+  <node componentName="tParallelize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="640" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tParallelize_1"/>
     <elementParameter field="CLOSED_LIST" name="WAIT_FOR" value="All"/>
     <elementParameter field="TEXT" name="SLEEPTIME" value="100"/>
@@ -747,7 +750,7 @@
     <elementParameter field="TEXT" name="LABEL" value="ingest-data-from-s3"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="768">
+  <node componentName="tFileList" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="544" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileList_2"/>
     <elementParameter field="DIRECTORY" name="DIRECTORY" value="&quot;/Users/vuh1/Development/sparkify-data/song-data&quot;"/>
     <elementParameter field="CLOSED_LIST" name="LIST_MODE" value="FILES"/>
@@ -770,7 +773,7 @@
     <elementParameter field="TEXT" name="LABEL" value="song-data-file-list"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="800" posY="768">
+  <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileInputDelimited_2"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_b2Nh0EybEe6Jvvu5xahXlA - staging_songs"/>
@@ -879,7 +882,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="960" posY="768">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="832">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
@@ -997,7 +1000,7 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tParallelize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="640">
+  <node componentName="tParallelize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="768">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tParallelize_2"/>
     <elementParameter field="CLOSED_LIST" name="WAIT_FOR" value="All"/>
     <elementParameter field="TEXT" name="SLEEPTIME" value="100"/>
@@ -1005,7 +1008,7 @@
     <elementParameter field="TEXT" name="LABEL" value="import-log-data-and-song-data"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tRedshiftConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="320">
+  <node componentName="tRedshiftConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="352" posY="384">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_38kCQE18Ee6KMMxOAM8cHg"/>
@@ -1034,6 +1037,178 @@
   </node>
   <node componentName="tParallelize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="192" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tParallelize_3"/>
+    <elementParameter field="CLOSED_LIST" name="WAIT_FOR" value="All"/>
+    <elementParameter field="TEXT" name="SLEEPTIME" value="100"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tRedshiftBulkExec" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBBulkExec_1"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER_VERSION" show="false" value="DRIVER_V2"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;5439&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="Redshift"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:+e2cVm76sSz7YmI28/Fjtj+icprau1DABdDCZYga"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="USE_STRING_PROPERTIES" show="false" value="false"/>
+    <elementParameter field="TABLE" name="ENTRY_PROPERTIES" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;metadata&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_hknfAEyvEe6ZsdZOVUsn9Q - metadata"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="redshift_id"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_SOURCE_TYPE" value="S3"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION_S3" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_S3" value="tS3Connection_1"/>
+    <elementParameter field="CLOSED_LIST" name="CREDENTIAL_PROVIDER" show="false" value="STATIC_CREDENTIALS"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:QFGp98QK6eXs6CXMn1qUindey5Bo6Km+h6XXjppQ"/>
+    <elementParameter field="TEXT" name="BUCKET" value="context.aws_s3_bucket"/>
+    <elementParameter field="TEXT" name="KEY" value="context.aws_s3_prefix_log_data"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY_EMR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY_EMR" show="false" value="enc:system.encryption.key.v1:KMLEGvskoEvPUf7XCbO36TSqctgM4+Qf1bqVK4XW"/>
+    <elementParameter field="TEXT" name="EMR_CLUSTER_ID" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HDFS_FILEPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY_DYNAMODB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY_DYNAMODB" show="false" value="enc:system.encryption.key.v1:Nvc0SfzirObcF25H6lmgFPYR6ADry6o5+l6Iylus"/>
+    <elementParameter field="TEXT" name="TABLENAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="READRATIO" show="false" value="50"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY_SSH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY_SSH" show="false" value="enc:system.encryption.key.v1:/dKM25oBSpoZF2yfNo8nur1fZC3dZbn0tfcpvCMQ"/>
+    <elementParameter field="TEXT" name="BUCKET_SSH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="KEY_SSH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ASSUME_ROLE" show="false" value="false"/>
+    <elementParameter field="TABLE" name="ROLE_TABLE" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="IMPORT_TYPE" value="JSON"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="','"/>
+    <elementParameter field="OPENED_LIST" name="TEXT_ENCLOSURE" show="false" value="EMPTY"/>
+    <elementParameter field="TEXT" name="JSON_MAPPING" value="&quot;s3://etl-with-talend/log_json_path.json&quot;"/>
+    <elementParameter field="TEXT" name="FIXEDWIDTH_MAPPING" show="false" value="&quot;column1:8,column2:64&quot;"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="COMPRESSION" show="false" value="GZIP"/>
+    <elementParameter field="CHECK" name="ENCRYPT" show="false" value="false"/>
+    <elementParameter field="PASSWORD" name="ENCRYPTED_KEY" show="false" value="enc:system.encryption.key.v1:BLX2zyt8EYln/yiKUT9550nQMCTaGhzwQHFCrHC3"/>
+    <elementParameter field="CLOSED_LIST" name="ENCODING" value="&quot;UTF8&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DATEFORMAT" value="NONE"/>
+    <elementParameter field="TEXT" name="DATE_PATTERN" show="false" value="&quot;YYYY-MM-DD&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TIMEFORMAT" value="NONE"/>
+    <elementParameter field="TEXT" name="TIME_PATTERN" show="false" value="&quot;YYYY-MM-DD HH:MI:SS&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="PARQUE_STATUPDATE" show="false" value="ON"/>
+    <elementParameter field="TABLE" name="OTHER_CONFIGURATION">
+      <elementValue elementRef="OTHER_PARAMETER" value="TRUNCATECOLUMNS"/>
+      <elementValue elementRef="DATA_VALUE" value=""/>
+      <elementValue elementRef="OTHER_PARAMETER" value="BLANKSASNULL"/>
+      <elementValue elementRef="DATA_VALUE" value=""/>
+      <elementValue elementRef="OTHER_PARAMETER" value="TRIMBLANKS"/>
+      <elementValue elementRef="DATA_VALUE" value=""/>
+    </elementParameter>
+    <elementParameter field="CLOSED_LIST" name="JDBC_URL" show="false" value="STANDARD"/>
+    <elementParameter field="TEXT" name="LABEL" value="load-log-data-to-staging_events-table"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tDBBulkExec_1">
+      <column comment="" key="false" length="0" name="artist" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="auth" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="firstname" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="gender" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="iteminsession" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="lastname" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="length" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="level" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="location" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="method" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="page" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="registration" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="sessionid" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="song" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="status" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ts" nullable="true" pattern="" precision="0" sourceType="INT8" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="useragent" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="userid" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tRedshiftBulkExec" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="768" posY="448">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBBulkExec_3"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_38kCQE18Ee6KMMxOAM8cHg"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DRIVER_VERSION" show="false" value="DRIVER_V2"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="context.AWS_Redshift_Server"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="context.AWS_Redshift_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="context.AWS_Redshift_Database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="context.AWS_Redshift_Schema"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="REDSHIFT"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="context.AWS_Redshift_Login"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:jyXaB/W0mTeod0YnBNElKPReBIykeVmazw9HsYZbiAjP58JXIEYqeq5wdm1XCBnhHZVwRQg8YePH"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="context.AWS_Redshift_AdditionalParams"/>
+    <elementParameter field="CHECK" name="USE_STRING_PROPERTIES" show="false" value="false"/>
+    <elementParameter field="TABLE" name="ENTRY_PROPERTIES" show="false"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;staging_songs&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CLEAR"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_kDOPcEyvEe6ZsdZOVUsn9Q - metadata"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="redshift_id"/>
+    <elementParameter field="CLOSED_LIST" name="DATA_SOURCE_TYPE" value="S3"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION_S3" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION_S3" value="tS3Connection_1"/>
+    <elementParameter field="CLOSED_LIST" name="CREDENTIAL_PROVIDER" show="false" value="STATIC_CREDENTIALS"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY" show="false" value="enc:system.encryption.key.v1:rR1//qlUXG3MkaH3oGb5I0BvNS2u0LY1srIqOqUt"/>
+    <elementParameter field="TEXT" name="BUCKET" value="context.aws_s3_bucket"/>
+    <elementParameter field="TEXT" name="KEY" value="context.aws_s3_prefix_song_data"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY_EMR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY_EMR" show="false" value="enc:system.encryption.key.v1:EP1oqbGlqtRG2kwnpulgh1ReXsQISV/X//YLoXHS"/>
+    <elementParameter field="TEXT" name="EMR_CLUSTER_ID" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HDFS_FILEPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY_DYNAMODB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY_DYNAMODB" show="false" value="enc:system.encryption.key.v1:dibX8kmzWfZ5bi2YFYAcWMKC8DjvDzciAnEPadvu"/>
+    <elementParameter field="TEXT" name="TABLENAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="READRATIO" show="false" value="50"/>
+    <elementParameter field="TEXT" name="ACCESS_KEY_SSH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="SECRET_KEY_SSH" show="false" value="enc:system.encryption.key.v1:GgT3NYqB9vbB63FUjNKWiizVlClxCx8AIgReI+xl"/>
+    <elementParameter field="TEXT" name="BUCKET_SSH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="KEY_SSH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="ASSUME_ROLE" show="false" value="false"/>
+    <elementParameter field="TABLE" name="ROLE_TABLE" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="IMPORT_TYPE" value="DELIMITED_OR_CSV"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="','"/>
+    <elementParameter field="OPENED_LIST" name="TEXT_ENCLOSURE" value="EMPTY"/>
+    <elementParameter field="TEXT" name="JSON_MAPPING" show="false" value="&quot;s3://jsonpaths_file&quot;"/>
+    <elementParameter field="TEXT" name="FIXEDWIDTH_MAPPING" show="false" value="&quot;column1:8,column2:64&quot;"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="COMPRESSION" show="false" value="GZIP"/>
+    <elementParameter field="CHECK" name="ENCRYPT" show="false" value="false"/>
+    <elementParameter field="PASSWORD" name="ENCRYPTED_KEY" show="false" value="enc:system.encryption.key.v1:1ZM/rfaZaTP2U2Nmzv7n5XQZDMWq9iCWA+Xh3PgL"/>
+    <elementParameter field="CLOSED_LIST" name="ENCODING" value="&quot;UTF8&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="DATEFORMAT" value="NONE"/>
+    <elementParameter field="TEXT" name="DATE_PATTERN" show="false" value="&quot;YYYY-MM-DD&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TIMEFORMAT" value="NONE"/>
+    <elementParameter field="TEXT" name="TIME_PATTERN" show="false" value="&quot;YYYY-MM-DD HH:MI:SS&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="PARQUE_STATUPDATE" show="false" value="ON"/>
+    <elementParameter field="TABLE" name="OTHER_CONFIGURATION"/>
+    <elementParameter field="CLOSED_LIST" name="JDBC_URL" show="false" value="STANDARD"/>
+    <elementParameter field="TEXT" name="LABEL" value="load-song-data-to-staging_songs-table"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" label="metadata" name="tDBBulkExec_3">
+      <column comment="" key="false" length="-1" name="num_songs" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="artist_id" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="artist_name" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="artist_latitude" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="artist_longitude" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="artist_location" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="song_id" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="0" name="title" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="duration" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="year" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tParallelize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tParallelize_4"/>
     <elementParameter field="CLOSED_LIST" name="WAIT_FOR" value="All"/>
     <elementParameter field="TEXT" name="SLEEPTIME" value="100"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" value="false"/>
@@ -1085,6 +1260,9 @@
   <connection connectorName="PARALLELIZE" label="Parallelize" lineStyle="13" metaname="tParallelize_2" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tParallelize_2" target="tFileList_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Parallelize"/>
   </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tParallelize_4">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
   <connection connectorName="PARALLELIZE" label="Parallelize" lineStyle="13" metaname="tParallelize_3" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tParallelize_3" target="tS3Connection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Parallelize"/>
   </connection>
@@ -1093,6 +1271,12 @@
   </connection>
   <connection connectorName="SYNCHRONIZE" label="Synchronize" lineStyle="12" metaname="tParallelize_3" offsetLabelX="0" offsetLabelY="0" source="tParallelize_3" target="tParallelize_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Synchronize"/>
+  </connection>
+  <connection connectorName="PARALLELIZE" label="Parallelize" lineStyle="13" metaname="tParallelize_4" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tParallelize_4" target="tDBBulkExec_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Parallelize"/>
+  </connection>
+  <connection connectorName="PARALLELIZE" label="Parallelize" lineStyle="13" metaname="tParallelize_4" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tParallelize_4" target="tDBBulkExec_3">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="Parallelize"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tS3List_1"/>
@@ -1145,13 +1329,28 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_23b52df1-d600-48de-9cf6-9097beb7431f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Ey1WdSrYGAb53OU4RP2uZY2Y5n/fYWHZjxhaUsIrLnLsL6k8GLqp8VMNTWGoq3NEsznPwNIY1byT&#13;
-4CSOTHneOw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8623857d-7093-4bf1-9b66-1290d3139975"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8gMgiGXz1Wb+7WuAW0/3d1ojW6xw8ReEbqfdYNNEYRGAuZb+kdMGtDxsKuJbsZHbYrmYL9pavp0C&#13;
-ix+RIk0yfA==</DigestValue></Reference></SignedInfo><SignatureValue>kzJevkBdNfKgxpbUfUqm/yNHdGskxSYpzJjBkZl7mzJV1iNuLLeTKpYbc8M6GoAHPSrzewHSiutA&#13;
-hQqzkoMH0tfzj5GYV5E807C4wYSdOi2w2ybupww2IYy+h8ZBr7jrukTNn5Y3vMEjyMRYo+jqHtdU&#13;
-jx5wp9gTlOXKiZlrMneMmm9VqB6XYTtWTBzZ017qkUjdYni+i3sZuXRxI4mqM+6MsItWrFtapYTj&#13;
-OTMAuhR01BLL3CaaH3Hec14tX5SfnP1gTwp3RZynxG9uFp0/0GeW68hfEp+G//lc4tlc7k+GIJM9&#13;
-bclCekx9zb730mBGyccfemw7N+zIqjoatbKzvw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBBulkExec_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBBulkExec_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tParallelize_4"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_db14d5f1-8458-494e-b5b1-b0d8ce93c9d3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HrA73UTLpTdQM2A/0XqWrcXpzGGdF+2OEgkXllLiYlbT4it9eQgr5E8adOAnxXza3GZv4mA88qkx&#13;
+VjWwLBRkhw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_086126dd-bd1a-49a4-b6ca-b878feb5317f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lql6aRLRBltSQnvUgGDuqv2zN3+ZuvNJwysMN6Dcz+AN3o8P3mVfcWuhlJEud4LFLpeipRFME6Lf&#13;
+bi7z+AnPCQ==</DigestValue></Reference></SignedInfo><SignatureValue>PfGwB+eYyZpHHMI4G5+xkGRJGNe9mTq4oDiz1cpr5bKiA1a7UsZqQVhRYYqWJXhY+broPwVwUE4N&#13;
+hs55VqeqkVtRHuP0CYg0sBVZyqEe1BnIW8ndnoqIjAvMuO7FKE6pCoqbRH1rCPK6EjauLTYTYghU&#13;
+k2UrXmggKbmNIStCMFF4DK0j+ZCtWTNXU5gx4YJyYNFBFYXe4j2HeNqBVoUfRuI0AXLNUkZzW1CF&#13;
+TbM+0XBHdP9ci9r3/B7XeI/Sw+btGXgyrPCswzxCy1XEpOd5Gg5NTRNRMJiE1+eJyeD/OdoNs8N3&#13;
+t5FjftRc+VCfByQmXoK+4O3YR+kQCdVN2ZJOVg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1173,4 +1372,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8623857d-7093-4bf1-9b66-1290d3139975" Target="#_23b52df1-d600-48de-9cf6-9097beb7431f"><Timestamp>2023-09-07 13:03:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_086126dd-bd1a-49a4-b6ca-b878feb5317f" Target="#_db14d5f1-8458-494e-b5b1-b0d8ce93c9d3"><Timestamp>2023-09-07 13:22:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
