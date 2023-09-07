@@ -9,6 +9,10 @@
     "version" : "Latest",
     "type" : "context"
   }, {
+    "id" : "_HaYvYEwCEe6RIPAnCs4sFg",
+    "version" : "Latest",
+    "type" : "property"
+  }, {
     "id" : "_3b1F4EyOEe6tR-ZuqzQJgg - staging_event_schema",
     "version" : "Latest",
     "type" : "schema"
