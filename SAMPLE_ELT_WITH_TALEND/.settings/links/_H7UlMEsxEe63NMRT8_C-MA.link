@@ -25,5 +25,15 @@
       "id" : "_RgBl0kwGEe6RIPAnCs4sFg",
       "name" : "RDS_Posgres_Schema"
     } ]
+  }, {
+    "contextName" : "Default",
+    "repoId" : "_sD9BYEwPEe6LuM3I4kqrTg",
+    "parameterList" : [ {
+      "id" : "_JrxEYE18Ee6KMMxOAM8cHg",
+      "name" : "connection_access_key"
+    }, {
+      "id" : "_JrxEYU18Ee6KMMxOAM8cHg",
+      "name" : "connection_secret_key"
+    } ]
   } ]
 }
